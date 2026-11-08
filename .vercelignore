@@ -1,0 +1,7 @@
+**/.env*
+**/__pycache__/
+**/.venv/
+**/cache/
+.next/
+node_modules/
+README.md
