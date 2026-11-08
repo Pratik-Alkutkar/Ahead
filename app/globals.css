@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* Ahead: light, calm, original. White cards on soft gray, deep teal brand. Color only carries meaning. */
+:root {
+  /* Ahead v4: sage + charcoal with one coral pop. Color still carries meaning. */
+  color-scheme: light;
+  --bg: #ECEFEC;
+  --card: #FFFFFF;
+  --text: #15181B;
+  --muted: #5A635F;
+  --faint: #8C948F;
+  --accent: #3C7A6B;
+  --accent-soft: #E2EEEA;
+  --sage: #6FA597;
+  --dark: #17191C;
+  --dark-2: #23272B;
+  --pop: #F0563F;
+  --good: #1E7F4A;
+  --watch: #B45309;
+  --act: #C2341F;
+  --good-soft: #E6F3EB;
+  --watch-soft: #FCF1E2;
+  --act-soft: #FDE9E5;
+  --ring-good: #3FAE7A;
+  --ring-watch: #F2A33A;
+  --ring-act: #F0563F;
+  --glass: rgba(236, 239, 236, 0.82);
+  --line: #E1E5E2;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-good: var(--good);
+  --color-watch: var(--watch);
+  --color-act: var(--act);
+  --color-good-soft: var(--good-soft);
+  --color-watch-soft: var(--watch-soft);
+  --color-act-soft: var(--act-soft);
+  --color-glass: var(--glass);
+  --color-line: var(--line);
+  --color-sage: var(--sage);
+  --color-dark: var(--dark);
+  --color-dark-2: var(--dark-2);
+  --color-pop: var(--pop);
+  --font-sans: "DIN Pro", "DINPro", "DIN Next", var(--font-brand), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(21, 24, 27, 0.04);
+  border-radius: 24px;
+  box-shadow: 0 1px 2px rgba(21, 24, 27, 0.04), 0 12px 32px rgba(21, 24, 27, 0.06);
+}
+.card-dark {
+  background: radial-gradient(120% 90% at 100% 0%, #2B3034 0%, var(--dark) 60%);
+  color: #F2F4F3;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(21, 24, 27, 0.22);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* clickable cards lift a little on hover */
+.lift { transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; }
+.lift:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(20, 23, 28, 0.1); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.shimmer {
+  color: var(--muted);
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+@keyframes shimmer { 50% { opacity: 0.45; } }
+
+@keyframes wave { 0%, 100% { height: 4px; } 50% { height: 16px; } }

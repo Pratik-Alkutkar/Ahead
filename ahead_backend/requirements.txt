@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+httpx
+psycopg[binary]
+python-dotenv
+numpy
+pandas
+pytest
+nvidia-riva-client
+python-multipart
